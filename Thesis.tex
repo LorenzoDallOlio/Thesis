@@ -243,7 +243,8 @@ Saranno descritti lo scambio di gas a livello sanguigno, il funzionamento di un 
 Nella seconda sezione verrà processato ed analizzato un database di serie temporali pulsossimetriche, al fine di estrapolare informazioni riguardanti l'individuo da cui proviene il singolo segnale.
 In tale sezione si farà anche una breve introduzione agli strumenti matematici utilizzati ed al loro scopo.
 Verranno infine esposti i risultati e le conclusioni nella terza e quarta sessione.
-In particolare sono state osservate differenze evidenti nelle distribuzioni relative a: TPR e MAD a seconda dell'anzianità del campione di pazienti considerato.
+In particolare sono state osservate differenze nelle distribuzioni relative a: TPR (turning point ratio, indice di randomicità), MAD (median absolute deviation, indice di dispersione statistica), PNN20 e PNN50 (indici percentuali riconducibili alla heart rate variability) a seconda dell'età del campione di individui considerato.
+%1263 caratteri
 %%%%%%%%%%%%%%%%%
 \endgroup
 \vspace*{\fill}
@@ -374,7 +375,7 @@ In generale, l'effetto del $2,3-DPG$ è relativamente lento, specie se paragonat
 
 \subsection{Principi alla base del funzionamento}
 
-Il pulsossimetro ha rivoluzionato la medicina moderna, permettendo di monitorare in maniera non invasiva e continuativa la saturazione dell'emoglobina nel sangue arterioso. 
+Il pulsossimetro ha contribuito ad innovare la medicina moderna, permettendo di monitorare in maniera non invasiva e continuativa la saturazione dell'emoglobina nel sangue arterioso. 
 Il principio alla base del funzionamento di un pulsossimetro risiede nel diverso assorbimento, da parte di ossiemoglobina e desossiemoglobina, di certe lunghezze d'onda presenti nella regione del rosso e dell'infrarosso. 
 Va considerato anche il fatto che le lunghezze d'onda prossime al giallo, al verde e al blu sono significativamente assorbite da alcuni tipi di tessuti e dall'acqua, perciò uno studio dell'andamento dell'assorbimento in tali regioni dello spettro elettromagnetico risulterebbe più complesso e meno preciso. 
 L'ossiemoglobina risulta assorbire una maggiore quantità di luce nella regione dell'infrarosso ed una minore nella regione del rosso. 
@@ -483,7 +484,7 @@ Tale evento corrisponderà, dopo un certo intervallo temporale, ad un aumento de
 È proprio a causa di questa catena di ritardi temporali che in una misura pulsossimetrica non sarà possibile ricavare l'esatta posizione di un particolare evento cardiaco.
 Ciò che risulta invece possibile ricavare è la distanza temporale tra un determinato evento e lo stesso nel ciclo successivo.
 Riprendendo la Fig:\ref{fig:Wiggers_Diagram}, è evidente la difficoltà nel rilevare la posizione temporale del picco R misurando la pressione (o il volume) di un vaso sanguigno, non vi sono picchi o forme particolari che aiutino a riconoscerlo.
-Se invece si considera la distanza temporale tra i due picchi R consecutivi (d'ora in avanti not come RR), tale distanza sarà la stessa fra qualsiasi altro punto ed il suo corrispondente nel ciclo cardiaco successivo.
+Se invece si considera la distanza temporale tra i due picchi R consecutivi (d'ora in avanti indicata con RR), tale distanza sarà la stessa fra qualsiasi altro punto ed il suo corrispondente nel ciclo cardiaco successivo.
 Pertanto sarà possibile prendere un punto facilmente identificabile (nel caso del pulsossimetro il massimo del segnale, ovvero il minimo dell'assorbimento luminoso) e tramite la sua frequenza ricavare la frequenza cardiaca, o tramite il suo periodo ricavare l'RR, proseguendo l'analisi su tali misure senza più alcun tipo di errore sistematico.
 
 
@@ -493,7 +494,7 @@ Pertanto sarà possibile prendere un punto facilmente identificabile (nel caso d
 
 \subsection{Differenza tra \texorpdfstring{$SpO_2$}{SpO_2} ed \texorpdfstring{$SaO_2$}{SaO_2}}
 
-Per l'importanza che rivestirà in questa sezione va evidenziata la differenza che esiste tra una misura di $SaO_2$ ed una misura di $SpO_2$.
+Per l'importanza che rivestirà in questa sezione va evidenziata la differenza che esiste tra una misura di $SaO_2$ ed una misura di $SpO_2$ (definiti dall'equazione $\ref{eq:definition}$).
 La prima si effettua solitamente con ossimetri ed è la misura della saturazione dell'ossigeno nel sangue arterioso.
 La seconda è la $SaO_2$ misurata da un pulsossimetro, ovvero la saturazione dell'ossigeno considerando solo l'emoglobina funzionale.
 L'emoglobina funzionale è quella in grado di trasportare l'ossigeno, dunque parleremo solo di ossiemoglobina ($O_2Hb$) e desossiemoglobina (indicata con $HHb$ o semplicemente con $Hb$).
@@ -502,6 +503,7 @@ Quest'ultima è quasi esclusivamente rappresentata da emoglobina legata con qual
 Pertanto le due misure sono ben diverse, anche se cercano di quantificare la stessa grandezza.
 In particolare la misura reale dell'$SaO_2$ verrà sovrastimata dall'$SpO_2$ ogni volta che nel circolo sanguigno sarà presente dell'emoglobina non funzionale:
 \begin{equation}
+	\label{eq:definition}
 	SpO_2 = \frac{[O_2Hb]}{[O_2Hb]+[HHb]}; \quad SaO_2 = \frac{[O_2Hb]}{[O_2Hb]+[HHb]+			[COHb]+[MetHb]+\ldots}
 \end{equation}
 
@@ -514,7 +516,7 @@ Segnali con scarsa ampiezza possono essere dovuti ad una riduzione della perfusi
 La riduzione dell'intensità delle pulsazioni nel sangue arterioso porta ad una diminuzione del rapporto segnale rumore del pulsossimetro ed eventualmente a letture instabili o eccessivamente basse della $SpO_2$
 
 
-\subsection{Avvelenamento da monossido di carbonio}
+\subsection{Inquinamento da monossido di carbonio}
 
 Il monossido di carbonio ($CO$) in condizioni standard è un gas incolore, inodore, insapore e non irritante. 
 I pazienti vittime di avvelenamento da $CO$ possono presentare sintomi molto generici, come mal di testa e "sintomi simil-influenzali". 
@@ -540,7 +542,7 @@ Per distinguere le tre molecole sopracitate servirebbe un pulsossimetro in grado
 
 Spesso la presenza di questa malattia comporta crisi vaso-occlusive e sindrome acuta del torace, che a loro volta possono causare o essere peggiorate dall'ipossiemia; si ha così un circolo vizioso. 
 La misurazione dell'$SpO_2$ effettuata con il pulsossimetro in pazienti affetti da anemia falciforme risulta ancora dibattuta. 
-Uno studio su 17 pazienti malati ha mostrato nel calcolo dell'$SpO_2$ una sovrastima media del contenuto di $O_2Hb$ del 3.4\% ed una sottostima media della saturazione dell'1.1\%, nonostante queste osservazioni le letture dei pulsossimetri non hanno portato a formulare diagnosi di ipossiemie errate \cite{Sickle}. 
+Uno studio su 17 pazienti malati ha mostrato nel calcolo dell'$SpO_2$ una sovrastima media del contenuto di $O_2Hb$ del 3.4\% ed una sottostima media della saturazione dell'1.1\%, nonostante queste osservazioni le letture dei pulsossimetri non hanno portato a formulare diagnosi di ipossiemie errate.% \cite{Sickle}. 
 Altri studi suggeriscono che tali effetti si accentuino durante le crisi vaso-occlusive. 
 Viene sottolineato come l'emoglobina degli eritrociti falciformi ($HbS$ dove S sta per sickle, ovvero falce in inglese), in condizioni normossiche (dove si ha scarsa polimerizzazione di $HbS$) abbia affinità con l'ossigeno simile a quella dell'emoglobina in pazienti sani, mentre in presenza di ipossiemia tale affinità cala, risultando in uno spostamento verso destra della curva di dissociazione emoglobinica classica. 
 Dunque per qualsiasi pressione osmotica dell'ossigeno si avrà una minore $SpO_2$. Teoricamente questo effetto dovrebbe portare un maggior rilascio di ossigeno ai tessuti.
@@ -579,7 +581,7 @@ Il risultato è un maggior valore di $R$ con un conseguente valore minore di $Sp
     \label{fig:Coloranti}
 \end{figure}
 
-In un campione di volontari con una $SpO_2 \geq$ 97\% si è osservato un drastico calo della stessa a seguito della somministrazione di blu di metilene (una soluzione di 5 ml con l'1\% di colorante), con un minimo del 65\% \cite{Pulseoximeter}. 
+In un campione di volontari con una $SpO_2 \geq$ 97\% si è osservato un drastico calo della stessa a seguito della somministrazione di blu di metilene (una soluzione di 5 ml con l'1\% di colorante), con un minimo del 65\%.% \cite{Pulseoximeter}. 
 \newline
 
 Il verde indocianina e l'indigotina invece non hanno un considerevole assorbimento luminoso nella regione dei 640 nm (Fig:\ref{fig:Coloranti}). 
@@ -593,11 +595,11 @@ Non vi è un metodo specifico per rimediare a questo tipo di errore, in quanto p
 Varianti piuttosto rare di emoglobina possono portare a misure erroneamente più basse della $SpO_2$. 
 Ad oggi esistono oltre 1000 varianti di questa proteina e ne vengono scoperte continuamente di nuove. 
 Esempi di alcune varianti che sono state osservate avere effetti sulla $SpO_2$ sono: $Hb$ Lensing, $Hb$ K\"oln, $Hb$ Hammersmith, $Hb$ Cheverly e $Hb$ Bonn. 
-In uno studio eseguito su padre e figlia sono stati osservati valori del 10\% inferiori di $SpO_2$ causati dalla presenza di $Hb$ Lensing per circa l'11\% dell' emoglobina totale \cite{Pulseoximeter}.%wrong citing
+In uno studio eseguito su padre e figlia sono stati osservati valori del 10\% inferiori di $SpO_2$ causati dalla presenza di $Hb$ Lensing per circa l'11\% dell' emoglobina totale.% \cite{Pulseoximeter}.%wrong citing
 Il fatto che l'affinità con l'ossigeno risulti normale suggerisce un'interferenza a livello di assorbanza da parte di questa variante dell'emoglobina. 
 \newline
 
-Uno altro studio effettuato su padre e figlio ha riportato risultati simili causati dall'$Hb$ Bonn \cite{Pulseoximeter}.%wrong citing 
+Uno altro studio effettuato su padre e figlio ha riportato risultati simili causati dall'$Hb$ Bonn.% \cite{Pulseoximeter}.%wrong citing 
 In particolare quest'ultima variante presenta un picco di assorbimento a 668 nm (lo stesso del blu di metilene) e di conseguenza una maggiore assorbanza, un maggior valore di $R$ ed un minor valore di $SpO_2$. 
 In altre parole l'$Hb$ Bonn si comporta in maniera simile alla desossiemoglobina o al blu di metilene. 
 Effetti simili sono stati osservati anche per $Hb$ K\"oln ed $Hb$ Cheverly.
@@ -607,7 +609,7 @@ Effetti simili sono stati osservati anche per $Hb$ K\"oln ed $Hb$ Cheverly.
 
 Per coloranti esterni al corpo si ha una riduzione dell'$SpO_2$ proprio per gli stessi meccanismi visti nella sezione sui coloranti all'interno dei tessuti. 
 Ovviamente il caso più frequente riguarda lo smalto per unghie durante misurazioni applicate alla falange distale, anche se moderni modelli di pulsossimetri sono in grado di attenuarne l'effetto. 
-In particolare colori come il nero o il marrone hanno mostrato il maggior decremento medio, il quale però risultava comunque inferiore al 2\% \cite{Pulseoximeter}.%wrong citing
+In particolare colori come il nero o il marrone hanno mostrato il maggior decremento medio, il quale però risultava comunque inferiore al 2\%.% \cite{Pulseoximeter}.%wrong citing
 
 
 \subsection{Gravi anemie}
@@ -657,7 +659,7 @@ Per una migliore precauzione è comunque consigliabile eseguire la misurazione i
 \subsection{Sepsi e shock settico}
 
 Allo stato attuale vi sono risultati differenti su come sepsi e shock settico possano influenzare la misura dell' $SpO_2$. 
-In uno studio eseguito su 80 pazienti la presenza di suddette patologie ha comportato una $SpO_2$ che sottostimava dell'1.4\% la reale saturazione \cite{Pulseoximeter}. 
+In uno studio eseguito su 80 pazienti la presenza di suddette patologie ha comportato una $SpO_2$ che sottostimava dell'1.4\% la reale saturazione.% \cite{Pulseoximeter}. 
 Sebbene tale modifica sia importante, sarebbe raramente in grado di influenzare una diagnosi. 
 Un'ipotesi avanzata per spiegare questo fenomeno è la seguente: la vasodilatazione indotta da sepsi porta alla formazione di shunt artero-venosi, con la conseguente rilevazione di alcune pulsazioni venose come se fossero arteriose. 
 Di contro, uno studio su 88 pazienti gravemente affetti da sepsi ha evidenziato una notevole sovrastima della saturazione da parte dell'$SpO_2$ (del valore di circa il 5\%) nei casi di ipossiemia (ovvero per $SpO_2 \leq 90\%$). 
@@ -894,7 +896,7 @@ La frequenza istantanea (in Hz) diventerà di conseguenza:
 \end{equation}
 L’ampiezza istantanea, la fase istantanea e la frequenza istantanea sono usate in alcune applicazioni per misurare ed identificare alcune caratteristiche locali del segnale.
 Un’altra applicazione della rappresentazione analitica del segnale è legata alla demodulazione di segnali modulati.
-Le coordinate polari separano adeguatamente gli effetti della modulazione dell’ampiezza e della modulazione della fase (o frequenza), ed effettivamente risulta possibile demodulare alcuni segnali semlpicemente dividendoli per l'ampiezza istantanea, punto per punto.
+Le coordinate polari separano adeguatamente gli effetti della modulazione dell’ampiezza e della modulazione della fase (o frequenza), ed effettivamente risulta possibile demodulare alcuni segnali semplicemente dividendoli per l'ampiezza istantanea, punto per punto.
  
 
 
@@ -950,8 +952,9 @@ Infine si rimuovono le coppie di picchi provvisori eccessivamente vicini (tali d
 I picchi provvisori mantenuti ancora dopo questa operazione denoteranno i picchi veri e propri del segnale.
 Successivamente viene calcolato l'indice di qualità $Q$ come:
 \begin{equation}
-	Q = var(altezza\;dei\;picchi)\;\cdot\;[(numero\;di\;volte\;in\;cui\;il\;gradiente			\;cambia\;segno) - 2(numero\;di\;picchi) +2].
+	Q = var(h_{picchi})\;\cdot\;[(N_{inversione\;segno\;gradiente}) - 2(N_{picchi}) +2].
 \end{equation}
+dove $var(h_{picchi})$ è la varianza delle altezze dei picchi, $N_{inversione\;segno\;gradiente}$ è il numero di volte in cui il gradiente cambia di segno ed $N_{picchi}$ è il numero di picchi rilevati nel segnale.
 Analizziamo la composizione di Q:\begin{itemize}
 	\item $var(h)$ serve per tenere conto di una demodulazione non correttamente 					  eseguita, o per errori di procedura o per segnali difficilmente demodulabili 				  perchè di ampiezza troppo bassa e/o discontinua;
 	\item il termine tra parentesi quadre tiene conto di quanti massimi e minimi locali 		  che non coincidono con picchi e ventri sono presenti nel segnale. 
@@ -964,7 +967,7 @@ A questo punto vengono estratte le features del dominio temporale:\begin{itemize
 	\item si calcola la $sdnn$ come deviazione standard di RR;
 	\item si calcola la $sdsd$ (standard deviation of successive differences) come 					  deviazione standard di $RR_{diff}$;
 	\item si ricava la $rmssd$ (root mean square of successive differences) come 					  radice quadrata della media di $RR_{diff}$ elevato al quadrato;
-	\item si ricava il $tpr$ (turning point ratio), che consiste in un indice di 					  randomicità, contando quanti massimi o minimi locali vi sono nell'array RR, 				  in rapporto alla lunghezza del segnale;
+	\item si ricava il $tpr$ (turning point ratio), che consiste in un indice di 					  randomicità/complessità per le serie temporali, contando quanti massimi o 				  minimi locali vi sono nell'array RR, in rapporto alla lunghezza del segnale;
 	\item si calcolano $pnn20$ e $pnn50$ come la percentuale di elementi di 				  	  	  $RR_{diff}$ che superi rispettivamente i $20ms$ o i $50ms$
 	\item si ricava la $mad$ (median absolute deviation) come mediana dello scarto 					  mediano assoluto di RR.
 \end{itemize}
@@ -991,14 +994,119 @@ Infine il database di features è salvato su file, pronto per essere caricato ed
 
 
 
-\section{}
-
-
-\subsection{}
-
-
 Risultati
 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{campione-age.jpg}
+	\caption{Nel grafico viene mostrata la composizione del campione di persone analizzato, ovvero il numero di individui appartenenti ad ogni età.
+Si vuole sottolineare che minore sarà il numero di occorrenze, maggiore sarà l'importanza dei singoli individui appartenenti a quella specifica età.
+Pertanto si potranno osservare fluttuazioni brusche negli andamenti dei parametri sotto riportati, in quanto la presenza di un parametro fuori norma avrà peso maggiore per quei valori di età poco popolati.}
+	\label{fig:campione-age}
+\end{figure}
+
+
+Con le features estratte si è potuto passare alla fase di analisi dati al fine di evidenziare differenze nel campione analizzato.
+Prima di iniziare l'esposizione dei risultati ottenuti si vuole sottolineare come inevitabilmente il numero di individui influenzi la precisione dell'analisi ogniqualvolta si parli di statistica.
+Pertanto certe brusche variazioni negli andamenti e nei grafici di questa sezione sono con buona probabilità da ricondursi al numero di individui che compongono il campione o il sotto-campione in questione. In Fig: \ref{fig:campione-age} viene mostrato il numero esatto di individui appartenenti ad ogni età tra 18 e 64 anni.
+
+
+
+\subsection{Grafici riassuntivi sulla variazione delle features in funzione dell'età}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{SDNN-age.jpg}
+	\caption{Nel grafico viene mostrato il valore medio delle standard deviation 				effettuate sugli array $RR$ per ogni età presente nel database analizzato.
+	Si noti come per questa feature (così come per altre) non vi siano andamenti 				apprezzabili che emergano al variare dell'età.}
+	\label{fig:SDNN-age}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{MAD-age.jpg}
+	\caption{Nel grafico viene mostrato il valore medio della median absolute deviation 	per ogni età degli individui di appartenenza.
+	Si noti come, nonostante le oscillazioni dovute ad un non elevato numero di 				campioni, tale parametro tenda a diminuire con l'età.}
+	\label{fig:MAD-age}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{PNN20-age.jpg}
+	\caption{Nel grafico viene mostrato il valore medio della PNN20 (ovvero la 					percentuale degli elementi di $RR_{diff}$ maggiore di $20ms$) per ogni età presente 	nel campione analizzato.
+	Anche per questo parametro è possibile osservare una tendenza a diminuire con 				l'aumentare dell'età.}
+	\label{fig:PNN20-age}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{PNN50-age.jpg}
+	\caption{Nel grafico viene mostrato il valore medio della PNN50 (ovvero la 					percentuale degli elementi di $RR_{diff}$ maggiore di $50ms$) per ogni età presente 	nel campione analizzato.
+	Com'era prevedibile, vista la natura dei due parametri, si osserva un'andamento 			analogo a quello della $PNN20$, ossia una tendenza a diminuire con l'aumentare 				dell'età.}
+	\label{fig:PNN50-age}
+\end{figure}
+
+
+Come è possibile notare la Fig: \ref{fig:SDNN-age} e la Fig: \ref{fig:MAD-age} differiscono nell'andamento mostrato nonostante siano entrambe indici di dispersione statistica.
+Talle evento può essere fatto risalire al discorso iniziale dell'attuale capitolo ed alla maggior robustezza della MAD, già accennata nel precedente capitolo.
+Gli andamenti in funzione dell'età di: MAD(Fig:\ref{fig:MAD-age}), PNN20(Fig:\ref{fig:PNN20-age}) e PNN50(Fig:\ref{fig:PNN50-age}) suggeriscono tutti una lieve ma rilevabile diminuzione della variabilità del ritmo cardiaco con l'età.
+
+
+\subsection{Grafici comparativi tra diversi sotto-campioni}
+
+\begin{figure}[h!]
+	\centering
+	\subfloat[Caratteristiche picco principale: $media=34.325$, $mediana=33.704$, $deviazione$ $standard=4.736$.]{\label{fig:mdleft}												{\includegraphics[width=\textwidth]{MAD-y.jpg}}}\hfill
+	\subfloat[Caratteristiche picco principale: $media=31.535$, $mediana=32.187$, $deviazione$ $standard=4.802$.]{\label{fig:mdright}											{\includegraphics[width=\textwidth]{MAD-o.jpg}}}
+	\caption{In figura è possibile confrontare la distribuzione della MAD raccolta da due campioni di età diverse.
+	Le principali differenze consistono nella presenza di un picco avente MAD maggiore del picco principale nel campione più giovane (a) ed un picco avente MAD minore nel campione più anziano (b).
+	Inoltre in (a) il 23.1\% del campione viene raccolto nel picco a MAD maggiore ed in (b) il 13.1\% viene raccolto nel picco a MAD minore.
+	Risultano praticamente trascurabili il picco a MAD minore in (a) ed il picco a MAD maggiore in (b).}
+	\label{fig:MAD}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\subfloat[Caratteristiche della distribuzione: $media=0.593$, $mediana=0.604$, $deviazione$ $standard = 0.080$]{\label{fig:mdleft}												{\includegraphics[width=\textwidth]{TPR-y.jpg}}}\hfill
+	\subfloat[Caratteristiche della distribuzione: $media=0.668$, $mediana=0.681$, $deviazione$ $standard = 0.065$]{\label{fig:mdright}											{\includegraphics[width=\textwidth]{TPR-o.jpg}}}
+	\caption{In figura è possibile confrontare il parametro TPR estratto da un campione giovane (a) ed un campione anziano (b).
+	La principale differenza si nota a livello di media e mediana, dove lo scostamento tre le due distribuzioni appare numericamente evidente.}
+	\label{fig:TPR}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\subfloat[Caratteristiche della distribuzione: $media=0.768$, $mediana=0.771$, $deviazione$ $standard = 0.094$]{\label{fig:mdleft}												{\includegraphics[width=\textwidth]{PNN20-y.jpg}}}\hfill
+	\subfloat[Caratteristiche della distribuzione: $media=0.689$, $mediana=0.678$, $deviazione$ $standard = 0.109$]{\label{fig:mdright}						{\includegraphics[width=\textwidth]{PNN20-o.jpg}}}
+	\caption{In figura è possibile confrontare il parametro PNN20 estratto da un campione giovane (a) ed un campione anziano (b).
+	La principale differenza tra le due distribuzioni risiede nella media e nella mediana.}
+	\label{fig:PNN20}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\subfloat[Caratteristiche della distribuzione: $media=0.422$, $mediana=0.420$, $deviazione$ $standard = 0.184$]{\label{fig:mdleft}												{\includegraphics[width=\textwidth]{PNN50-y.jpg}}}\hfill
+	\subfloat[Caratteristiche della distribuzione: $media=0.307$, $mediana=0.238$, $deviazione$ $standard = 0.206$]{\label{fig:mdright}											{\includegraphics[width=\textwidth]{PNN50-o.jpg}}}
+	\caption{In figura è possibile confrontare il parametro PNN50, anch'esso estratto da un campione giovane (a) ed un campione anziano (b).
+	La principale differenza si nota sempre a livello di media e soprattutto a livello di mediana mediana, dove lo scostamento tre le due distribuzioni appare più accentuato.}
+	\label{fig:PNN50}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\subfloat[Caratteristiche della distribuzione: $media=1059ms$, $mediana=919ms$, $deviazione$ $standard = 758ms$]{\label{fig:mdleft}												{\includegraphics[width=\textwidth]{RR-20anni.jpg}}}\hfill
+	\subfloat[Caratteristiche della distribuzione: $media=768ms$, $mediana=771ms$, $deviazione$ $standard = 94.2ms$]{\label{fig:mdright}											{\includegraphics[width=\textwidth]{RR-62anni.jpg}}}
+	\caption{Qui sono messi a confronto i valori degli intervalli RR per un soggetto giovane (a) (20 anni) ed uno meno giovane (b) (62 anni).
+	Non si può dare peso alla differenza di media, in quanto ogni individuo ha la propria e questa stessa è a sua volta molto variabile a seconda di cosa si stia facendo, Spicca però la notevole differenza tra le deviazioni standard, ad indicare che per un individuo giovane si ha una maggiore variabilità negli intervalli RR di quanto non si abbia in un individuo più anziano.}
+	\label{fig:RR_y_vs_o}
+\end{figure}
+
+
+La diminuzione della media della distribuzione del TPR (FIG:\ref{fig:TPR}) suggerisce una minor casualità all'interno degli intervalli tra picchi R con l'invecchiamento.
+Le diminuzioni considerevoli delle mediane per le distribuzioni di PNN20 (Fig:\ref{fig:PNN20}) e PNN50 (Fig:\ref{fig:PNN50}) dimostrano una minore variabilità nel ritmo cardiaco per il campione più anziano e tali effetti sono ancora più visibili nella differenza tra le deviazioni standard degli array RR mostrati in Fig:\ref{fig:RR_y_vs_o}.
+Infine nella MAD si osservano tre picchi: il primo (compreso tra 0 e 20 u.a.) si manifesta esclusivamente per campioni più anziani, il secondo (compreso tra 20 e 60 u.a.) è il maggiore ed è sempre presente, il terzo (compreso tra 60 ed 80 u.a.) è visibile solo per campioni più giovani. 
+Dunque anche i grafici comparativi mostrano una diminuzione della heart rate variability e della complessità del segnale come conseguenza dell'invecchiamento.
 
 
 
@@ -1006,8 +1114,12 @@ Risultati
 
 
 
-Conclusioni
-
+Alcuni indicatori di dispersione come MAD, PNN20 e PNN50 hanno mostrato un calo con l'aumentare dell'età.
+Il fatto che la deviazione standard non abbia evidenziato alcun tipo di andamento può esser fatto risalire allo scarso numero di campioni impiegati, i quali avrebbero reso eccessivamente influenti i pochi a disposizione.
+È stato dunque importante introdurre la MAD, in quanto più robusta contro questo tipo di problemi e dunque più affidabile nel nostro caso.
+Il calo del TPR avvenuto con l'aumentare dell'età può essere visto sia come minor casualità della serie temporale, sia come minor complessità del segnale analizzato. 
+In conclusione si evidenzia una diminuzione di complessità e variabilità del ritmo cardiaco tra soggetti più giovani e soggetti più anziani.
+Tale fatto concorda con la letteratura attualmente a disposizione e suggerisce l'importanza ancora non pienamente compresa della heart rate variability per un soggetto in salute.
 
 
 
@@ -1046,6 +1158,8 @@ dove $\varepsilon_{\lambda}^{'} = \frac{\varepsilon_{\lambda}}{ln(10)}$ .
 \newpage
 \thispagestyle{empty}
 
+
+
 \begin{thebibliography}{1}
 \bibitem{Pulseoximeter}
 Edward D. Chan, Michael M. Chan, Mallory M. Chan. 
@@ -1053,19 +1167,29 @@ Edward D. Chan, Michael M. Chan, Mallory M. Chan.
 Respiratory Medicine. Anno: 2013. Pag. 789-791
 \\\texttt{https://www.boxym.com/wp-content/uploads/2018/07/Pulse-oximetry-Understanding-its-basic-principles-facilitates-appreciation-of-its-limitations.pdf}
 
+
 \bibitem{Sickle}
 Ortiz FO, Aldrich TK, Nagel RL, Benjamin LJ.
 \textit{Accuracy of pulseoximetry in sickle cell disease.}
 Am J Respir Crit Care Med. Anno: 1999. pag. 159-447 e 51.
 
 
+\bibitem{Hemoglobin}
+Ranjan K. Dash and James B. Bassingthwaighte
+\textit{Erratum to: Blood HbO2 and HbCO2 Dissociation Curves at Varied O2, CO2, pH, 2,3-DPG and Temperature Levels}.
+Ann Biomeg Eng. Anno: 2010 Apr; 38(4): 1683–1701. 
+\\\texttt{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2862600/}
 
 
+\bibitem{Afib}
+Tang SC, et al. 
+\textit{Identification of Atrial Fibrillation by Quantitative Analyses of Fingertip Photoplethysmogram.} Sci Rep. 2017;7:45644. doi: 10.1038/srep45644.
 
 
-
-
-
+\bibitem{HRV}
+Daniel T. Kaplan, et al.
+\textit{Aging and the complexity of cardiovascular dynamics.}
+Biophysical journal. Volume 59. Anno:1991 Apr. pag.945-949
 
 
 
